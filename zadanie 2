@@ -1,0 +1,48 @@
+var n,a,flag: integer;
+
+begin
+  readln(n);
+  a:=n div 10;
+  flag:=0;
+  while(a<>0) do 
+  begin
+    if(a mod 10> n mod 10) then 
+    begin
+      flag:=1; //неверный if, может выдать правильный ответ при : 6523,8783 и т.д., то есть при нем возрастание первых слева чисел не важно
+    end;
+    n:= n div 10;
+    a:= a div 10;
+  end;
+  writeln(flag);
+  if flag = 1 then
+    writeln('yes')
+  else
+    writeln('no');
+end.
+
+//правильное решение
+var n,a,flag: integer;
+
+begin
+  readln(n);
+  a:=n div 10;
+  flag:=0;
+  while(a<>0) do 
+  begin
+    if(a mod 10>n mod 10) then begin
+      flag:=1;
+    n:= n div 10;
+    a:= a div 10;
+    end
+    else 
+      begin
+      flag:=0;
+      a:=0;
+      end
+  end;
+  writeln(flag);
+  if flag = 1 then
+    writeln('yes')
+  else
+    writeln('no');
+end.
