@@ -1,0 +1,20 @@
+#в демо там дается файл, где хранятся все эти данные, поэтому подключаем его + я посмотрел разборы этих заданий и понял что паскаль судя по всему уже умер
+
+f=open('26.txt')
+s,n = map(int, f.readline().split())
+
+a=[]
+
+for i in range(n):
+	a.append(int(f.readline()))
+a.sort();
+b=[]
+for i in range (n):
+	if sum(b)+a[i]<s:
+		b.append(a[i])
+	elif (sum(b) - a[i-1] + a[i]<s) and i>0:
+		del(b[-1])
+		b.append(a[i])
+	else:
+		break
+print(len(b),b[-1])
