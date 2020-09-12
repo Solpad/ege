@@ -1,0 +1,29 @@
+//Рыбаков Артём, ч1 задание 3.
+
+var n,a,flag,i : integer;
+	mas: array[1..16] of integer; //массив на 16 элементов вместо 15...
+begin
+	for i:=1 to 15 do
+		readln(mas[i]);
+	for i:=1 to 2 do
+		writeln(mas[i]);
+	for i:=9 to 3                //чтобы выводить в обратном порядке нужно использовать оператор downto
+		writeln(mas[i]);
+	for i:=10 to 16 do
+		writeln(mas[i]);
+end.
+
+//правильное решение
+
+var n,a,flag,i : integer;
+	mas: array[1..15] of integer;
+begin
+	for i:=1 to 15 do
+		readln(mas[i]);
+	for i:=1 to 2 do
+		writeln(mas[i]);
+	for i:=9 downto 3 do 
+		writeln(mas[i]);
+	for i:=10 to 15 do
+		writeln(mas[i]);
+end.
