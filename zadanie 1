@@ -1,1 +1,41 @@
-ase
+var n,a,k,i : integer;
+
+begin
+  readln(n,a,k); 
+  while(n=0) //забыли do + должно выполняться условие n <> 0,иначе цикл не начнется
+  begin
+    if (a = n mod 10) then
+    begin
+      inc(i);
+    end;
+    n:=n div 10;
+  end;
+  writeln(i);//зачем выводить количество схожих цифр?
+  if i>k then
+    writeln('yes')
+  else
+    writeln('no');
+
+end.
+
+
+//правильное решение
+
+var n,a,k,i : integer;
+
+begin
+  readln(n,a,k); 
+  while(n<>0)do 
+  begin
+    if (a = n mod 10) then
+    begin
+      inc(i);
+    end;
+    n:=n div 10;
+  end;
+  writeln(i);
+  if i>k then
+    writeln('yes')
+  else
+    writeln('no');
+end.
