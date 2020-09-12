@@ -1,0 +1,21 @@
+Рыбаков Артём, задание 6
+
+var i,n,x,y,min,s:integer;
+
+begin
+  readln(n); s:=0; min:=10000;
+    for i:=1 to n do begin
+      readln(x,y);
+  if x>y then s:= s+x 
+    else 
+      s:= s+y;
+    if(abs(x-y) < min) and (abs(x-y) mod 3 <> 0) then
+      min:= abs(x-y);
+    end;
+    if s mod 3 = 0 then
+       if min<1000 then
+         s:= s-min
+       else 
+         s:= 0;
+    writeln(s);
+end.
